@@ -1,0 +1,11 @@
+create database ecommerce;
+create table Users( id bigint auto_increment Not null, email varchar(255) not null, passwords  varchar(255) not null, createdAt datetime default now(),primary key (id));
+create table Products( id bigint auto_increment Not null, name varchar(255) not null, category varchar(255) not null, price bigint not null, createdAt datetime default now(),primary key (id));
+create table Orders( id bigint auto_increment Not null, productId bigint not null, userId bigint not null, quantity int not null, createdAt datetime default now(),payment bit not null default 0, Foreign key (productId) References Products(id) ,Foreign key (userId) References Users(id) ,primary key (id));
+show tables;
+select * from Users;
+ select * from Products;
+select * from Orders;
+insert into Users (email , passwords) values ("abc@relevel.com","abcPassWord"),("xyz@relevel.com","xyzPassWord"),("mno@relevel.com","mnoPassWord"),("srk@relevel.com","srkPassWord"),("relevel@relevel.com","relevelPassWord");
+insert into Products (name, category, price) values("Pixel 4a","MobilePhone",30000),("Pixel 4","MobilePhone",34000),("Sony Bravia","Television",40000),("Dell","Laptop",50000),("Lenovo","Laptop",35000),("Samsung s7","MobilePhone",70000); 
+insert into Orders(productId,userId,quantity)values(1,1,2),(3,1,3),(4,3,2),(5,2,1),(2,4,2);

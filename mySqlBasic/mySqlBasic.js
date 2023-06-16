@@ -69,3 +69,27 @@ DROP INDEX - deletes an index
 
 */
 
+/*
+
+There are five types of Sql commands :
+ DDL(Data Defination Language), 
+ DML(Data Manipulation Language),
+ DCL(Data Control Langauge), 
+ TCL(Transaction Control Language), 
+ DQL(Data Query Language).
+
+1. DDL :-
+create, alter, drop, truncate
+
+2. DML :-
+insert, modify, update, delete
+
+3.DCL :-
+revoke grant
+
+4.TCL :-
+commit, rollback, savepoint, transaction
+
+5.DQL :-
+select
+*/
