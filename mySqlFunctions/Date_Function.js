@@ -206,6 +206,51 @@ mysql> select date_format('2023-07-19','%e : %D-%b-%Y');
 1 row in set (0.00 sec)
 
 
+mysql> select sysdate() 'Date', date_format(sysdate(),'%y'),'Year';
++---------------------+-----------------------------+------+
+| Date                | date_format(sysdate(),'%y') | Year |
++---------------------+-----------------------------+------+
+| 2023-06-20 19:59:07 | 23                          | Year |
++---------------------+-----------------------------+------+
+1 row in set (0.00 sec)
+
+mysql> select sysdate() 'Date', date_format(sysdate(),'%y')'Year';
++---------------------+------+
+| Date                | Year |
++---------------------+------+
+| 2023-06-20 19:59:31 | 23   |
++---------------------+------+
+1 row in set (0.00 sec)
+
+
+
+mysql> select sysdate() 'Date', date_format(sysdate(),'%W  %d' '%M' '%Y');
++---------------------+-------------------------------------------+
+| Date                | date_format(sysdate(),'%W  %d' '%M' '%Y') |
++---------------------+-------------------------------------------+
+| 2023-06-20 20:12:07 | Tuesday  20June2023                       |
++---------------------+-------------------------------------------+
+1 row in set (0.00 sec)
+
+
+
+mysql> select sysdate() 'Date', date_format(sysdate(),'%W  %e %m %Y');
++---------------------+---------------------------------------+
+| Date                | date_format(sysdate(),'%W  %e %m %Y') |
++---------------------+---------------------------------------+
+| 2023-06-20 20:13:18 | Tuesday  20 06 2023                   |
++---------------------+---------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> select sysdate() 'Date', date_format(sysdate(),'%W  %e %M %Y');
++---------------------+---------------------------------------+
+| Date                | date_format(sysdate(),'%W  %e %M %Y') |
++---------------------+---------------------------------------+
+| 2023-06-20 20:13:24 | Tuesday  20 June 2023                 |
++---------------------+---------------------------------------+
+1 row in set (0.00 sec)
+
+
 
 
 DATEDIFF(expr1,expr2): returns expr1 - expr2 expressed as a value in days from one date to the other. expr1 and expr2 are date or date-and-time expressions. Only the date parts of the values are used in the calculation.
@@ -286,4 +331,127 @@ mysql> select dayname("2023-05-16");
 | Tuesday               |
 +-----------------------+
 1 row in set (0.01 sec)
+
+
+DayOfMonth:-
+
+
+mysql> select dayofmonth('2023-06-19');
++--------------------------+
+| dayofmonth('2023-06-19') |
++--------------------------+
+|                       19 |
++--------------------------+
+1 row in set (0.01 sec)
+
+
+DayOfWeek:-
+The DAYOFWEEK function returns an integer, in the range of 1 to 7,
+that represents the day of the week, where 1 is Sunday and 7 is Saturday
+
+mysql> select dayofweek('2023-06-19');
++-------------------------+
+| dayofweek('2023-06-19') |
++-------------------------+
+|                       2 |
++-------------------------+
+1 row in set (0.00 sec)
+
+
+DayOfYear:-
+
+mysql> select dayofyear('2023-06-20');
++-------------------------+
+| dayofyear('2023-06-20') |
++-------------------------+
+|                     171 |
++-------------------------+
+1 row in set (0.01 sec)
+
+Extract:-
+
+mysql> select now(), extract(hour from now());
++---------------------+--------------------------+
+| now()               | extract(hour from now()) |
++---------------------+--------------------------+
+| 2023-06-20 20:34:21 |                       20 |
++---------------------+--------------------------+
+1 row in set (0.00 sec)
+
+mysql> select now(), extract(minute from now());
++---------------------+----------------------------+
+| now()               | extract(minute from now()) |
++---------------------+----------------------------+
+| 2023-06-20 20:34:35 |                         34 |
++---------------------+----------------------------+
+1 row in set (0.00 sec)
+
+mysql> select now(), extract(second from now());
++---------------------+----------------------------+
+| now()               | extract(second from now()) |
++---------------------+----------------------------+
+| 2023-06-20 20:34:43 |                         43 |
++---------------------+----------------------------+
+1 row in set (0.00 sec)
+
+mysql> select now(), extract(week from current_date());
++---------------------+-----------------------------------+
+| now()               | extract(week from current_date()) |
++---------------------+-----------------------------------+
+| 2023-06-20 20:36:59 |                                25 |
++---------------------+-----------------------------------+
+1 row in set (0.01 sec)
+
+mysql> select now(), extract(month from current_date());
++---------------------+------------------------------------+
+| now()               | extract(month from current_date()) |
++---------------------+------------------------------------+
+| 2023-06-20 20:37:10 |                                  6 |
++---------------------+------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> select now(), extract(quarter from current_date());
++---------------------+--------------------------------------+
+| now()               | extract(quarter from current_date()) |
++---------------------+--------------------------------------+
+| 2023-06-20 20:39:34 |                                    2 |
++---------------------+--------------------------------------+
+1 row in set (0.00 sec)
+
+
+From_Days():-
+
+mysql> select from_days(2000);
++-----------------+
+| from_days(2000) |
++-----------------+
+| 0005-06-23      |
++-----------------+
+
+mysql> select from_days(200);
++----------------+
+| from_days(200) |
++----------------+
+| 0000-00-00     |
++----------------+
+1 row in set (0.00 sec)
+
+mysql> select from_days(366);
++----------------+
+| from_days(366) |
++----------------+
+| 0001-01-01     |
++----------------+
+1 row in set (0.00 sec)
+
+
+Hour:-
+
+mysql> select hour(sysdate()),curtime();
++-----------------+-----------+
+| hour(sysdate()) | curtime() |
++-----------------+-----------+
+|              20 | 20:50:20  |
++-----------------+-----------+
+1 row in set (0.00 sec)
 */
