@@ -277,5 +277,13 @@ mysql> select year("1997-05-12");
 1 row in set (0.00 sec)
 
 
+DAYNAME:- 
 
+mysql> select dayname("2023-05-16");
++-----------------------+
+| dayname("2023-05-16") |
++-----------------------+
+| Tuesday               |
++-----------------------+
+1 row in set (0.01 sec)
 */
