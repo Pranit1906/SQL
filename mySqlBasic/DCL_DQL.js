@@ -20,7 +20,8 @@ REVOKE SELECT, UPDATE ON MY_TABLE FROM USER1, USER2;
 2.DQL(Data Query Language):-
 DQL is used to fetch the data from the database.
 It uses only one command:
-a. SELECT: This is the same as the projection operation of relational algebra. It is used to select the attribute based on the condition described by WHERE clause.
+a. SELECT: This is the same as the projection operation of relational algebra. It is used to select the attribute based on 
+ the condition described by WHERE clause.
 
 Syntax:-
 SELECT expressions FROM TABLES  WHERE conditions;  

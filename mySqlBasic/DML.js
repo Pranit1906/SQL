@@ -17,7 +17,10 @@ INSERT INTO TABLE_NAME VALUES (value1, value2, value3, .... valueN);
 For example:-
 INSERT INTO javatpoint (Author, Subject) VALUES ("Sonoo", "DBMS");  
 
-mysql> insert into employee(id, name, salary, age, date) values(1, 'Pranit', 35000, 26,'1997-06-19'),(2, 'Sanit', 40000, 18,'2004-07-26'),(3, 'Soumitra', 25000, 29,'1993-09-15'),(4, 'Monu', 27000, 23,'1987-03-10'),(5, 'Yogesh', 31000, 26,'1998-03-29');
+mysql> insert into employee(id, name, salary, age, date) values(1, 'Pranit', 35000, 26,'1997-06-19'),
+(2, 'Sanit', 40000, 18,'2004-07-26'),(3, 'Soumitra', 25000, 29,'1993-09-15'),(4, 'Monu', 27000, 23,'1987-03-10'),
+(5, 'Yogesh', 31000, 26,'1998-03-29');
+
 Query OK, 5 rows affected (0.05 sec)
 Records: 5  Duplicates: 0  Warnings: 0
 
@@ -33,7 +36,8 @@ mysql> select * from employee;
 +----+----------+--------+------+------------+
 
 
-mysql> insert into employee values(6, 'Pramod', 28000, 28,'1987-12-09'),(7, 'Sonu', 42000, 24,'1995-07-16'),(8, 'Goma', 19000, 19,'1991-08-01'),(9,'Son',33000,33,'1999-01-19'),(10,'Mogesh', 25600, 23,'1988-07-22');
+mysql> insert into employee values(6, 'Pramod', 28000, 28,'1987-12-09'),(7, 'Sonu', 42000, 24,'1995-07-16'),(8, 'Goma', 19000, 19,'1991-08-01'),
+(9,'Son',33000,33,'1999-01-19'),(10,'Mogesh', 25600, 23,'1988-07-22');
 Query OK, 5 rows affected (0.02 sec)
 Records: 5  Duplicates: 0  Warnings: 0
 
