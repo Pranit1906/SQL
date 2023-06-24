@@ -135,6 +135,26 @@ mysql> select * from employee;
 mysql> truncate table employee;
 Query OK, 0 rows affected (0.04 sec)
 
+Examples of Alter and truncates
 
+TRUNCATE :remove all records from a table, including all spaces allocated for the records are removed.
+TRUNCATE TABLE table_name;
+
+
+
+ALTER: ALTER TABLE command is used to change the name of the table or rename one or more columns of the table, add new columns, remove existing ones, modify the datatype, length, index of one or more column and we can also rename the name of the table
+
+1. ALTER TABLE statement with ADD command :
+ALTER TABLE name_of_table ADD name_of_new_column details_of_column [ FIRST | AFTER name_of_existing_column ];
+
+
+2. ALTER TABLE – Modify columns:
+ALTER TABLE table_name MODIFY column_name column_definition [ FIRST | AFTER column_name];    
+
+3. ALTER TABLE – Rename a column in a table:
+ALTER TABLE table_name CHANGE COLUMN original_name new_name column_definition  [FIRST | AFTER column_name];
+
+4. ALTER TABLE – Drop a column
+ALTER TABLE table_name DROP COLUMN column_name;
 
 */
