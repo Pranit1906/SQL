@@ -1,4 +1,9 @@
 /*
+/------------------------------------------------LIKE ALWAYS WORKS WITH PATTERNS-------------------------------------------------------------/
+
+WHERE clause with LIKE operator: It is used when we want to select rows to display that are similar to another field or constant.
+It is used with % (percentage) or _ (underscore) for character data types. % represent many, _ represent single character.
+
 The SQL LIKE Operator
 The LIKE operator is used in a WHERE clause to search for a specified pattern in a column.
 

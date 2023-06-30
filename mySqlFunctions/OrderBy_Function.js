@@ -49,4 +49,13 @@ mysql> select salary from employee  order by salary ;
 +--------+
 6 rows in set (0.00 sec)
 
+
+
+SELECT with List operator (IN): It can be used instead of OR condition for single field
+and can be used with character or date values.
+
+
+
+SELECT with LIMIT: This is command is to restrict the number of records in the result set based on the requirement.
+This is similar to the TOP command in SQL Server.
 */
