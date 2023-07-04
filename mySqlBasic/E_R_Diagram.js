@@ -123,3 +123,26 @@ A student attribute age which always changes and is derived from another attribu
 
 
 */
+
+/*
+
+
+
+Summary:- 
+1.) ER Model in DBMS stands for an Entity-Relationship model.
+2.) The ER model is a high-level data model diagram
+3.) ER diagrams are a visual tool which is helpful to represent the ER model
+4.) ER diagrams in DBMS are blueprint of a database
+5.) Entity relationship diagram DBMS displays the relationships of entity set stored in a database
+6.) ER diagrams help you to define terms related to entity relationship modeling
+7.) ER Model in DBMS is based on three basic concepts: Entities, Attributes & Relationships
+8.) An entity can be place, person, object, event or a concept, which stores data in the database (DBMS)
+9.) Relationship is nothing but an association among two or more entities
+10.)A weak entity is a type of entity which doesn’t have its key attribute
+11.)It is a single-valued property of either an entity-type or a relationship-type
+12.)It helps you to defines the numerical attributes of the relationship between two entities or entity sets
+13.)ER- Diagram DBMS is a visual representation of data that describe how data is related to each other
+14.)While Drawing ER diagrams in DBMS, you need to make sure all your entities and relationships are properly labeled.
+
+
+*/

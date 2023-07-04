@@ -87,3 +87,50 @@ mysql> select * from emp where salary in (10000,8000,40000,22000,35000);
 5 rows in set (0.00 sec)
 
 */
+
+/*
+Not In Clause In SubQuery
+
+mysql> select * from customer_table;
++---------+---------+------------+------+
+| Cust_Id | Name    | Occupation | Age  |
++---------+---------+------------+------+
+|     101 | Peter   | Engineer   |   32 |
+|     102 | Joseph  | Developer  |   30 |
+|     103 | John    | Leader     |   28 |
+|     104 | Stephen | Scientist  |   45 |
+|     105 | Suzi    | Carpenter  |   26 |
+|     106 | Bob     | Actor      |   25 |
+|     107 | NULL    | NULL       | NULL |
++---------+---------+------------+------+
+7 rows in set (0.00 sec)
+
+mysql> select * from Customer_table where Cust_Id not in (select Cust_Id from Order_table);
++---------+------+------------+------+
+| Cust_Id | Name | Occupation | Age  |
++---------+------+------------+------+
+|     105 | Suzi | Carpenter  |   26 |
+|     107 | NULL | NULL       | NULL |
++---------+------+------------+------+
+2 rows in set (0.01 sec)
+
+For Values which are not null:-
+
+mysql> select * from customer_table where Cust_Id not in ( select Cust_Id from customer_table where Name is Null);
++---------+---------+------------+------+
+| Cust_Id | Name    | Occupation | Age  |
++---------+---------+------------+------+
+|     101 | Peter   | Engineer   |   32 |
+|     102 | Joseph  | Developer  |   30 |
+|     103 | John    | Leader     |   28 |
+|     104 | Stephen | Scientist  |   45 |
+|     105 | Suzi    | Carpenter  |   26 |
+|     106 | Bob     | Actor      |   25 |
++---------+---------+------------+------+
+6 rows in set (0.00 sec)
+
+
+
+
+
+*/

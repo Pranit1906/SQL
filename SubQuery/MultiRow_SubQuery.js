@@ -52,7 +52,8 @@ WHERE productLine = 'Planes')
 AND productLine <> 'Planes';
 
 
-mysql> select  id,Student_Name, Student_Salary from employee where Student_Salary > ANY (select Student_Salary from employee where Student_Salary = 25000);
+mysql> select  id,Student_Name, Student_Salary from employee
+ where Student_Salary > ANY (select Student_Salary from employee where Student_Salary = 25000);
 +----+--------------+----------------+
 | id | Student_Name | Student_Salary |
 +----+--------------+----------------+
@@ -68,7 +69,8 @@ mysql> select  id,Student_Name, Student_Salary from employee where Student_Salar
 +----+--------------+----------------+
 9 rows in set (0.01 sec)
 
-mysql> select  id,Student_Name, Student_Salary from employee where Student_Salary < ANY (select Student_Salary from employee where Student_Salary = 44000);
+mysql> select  id,Student_Name, Student_Salary from employee 
+where Student_Salary < ANY (select Student_Salary from employee where Student_Salary = 44000);
 +----+--------------+----------------+
 | id | Student_Name | Student_Salary |
 +----+--------------+----------------+
@@ -85,10 +87,12 @@ mysql> select  id,Student_Name, Student_Salary from employee where Student_Salar
 +----+--------------+----------------+
 10 rows in set (0.00 sec)
 
-mysql> select  id,Student_Name, Student_Salary from employee where Student_Salary > ANY (select Student_Salary from employee where Student_Salary = 44000);
+mysql> select  id,Student_Name, Student_Salary from employee where 
+Student_Salary > ANY (select Student_Salary from employee where Student_Salary = 44000);
 Empty set (0.00 sec)
 
-mysql> select  id,Student_Name, Student_Salary from employee where Student_Salary = ANY (select Student_Salary from employee);
+mysql> select  id,Student_Name, Student_Salary from employee where 
+Student_Salary = ANY (select Student_Salary from employee);
 +----+--------------+----------------+
 | id | Student_Name | Student_Salary |
 +----+--------------+----------------+
@@ -131,7 +135,8 @@ FROM products
 WHERE buyPrice < ALL (SELECT AVG(buyPrice) FROM 
 products GROUP BY productLine);
 
-mysql> select  id,Student_Name, Student_Salary from employee where Student_Salary > All (select avg(Student_Salary) from employee) group by Student_Name;
+mysql> select  id,Student_Name, Student_Salary from employee where 
+Student_Salary > All (select avg(Student_Salary) from employee) group by Student_Name;
 +----+--------------+----------------+
 | id | Student_Name | Student_Salary |
 +----+--------------+----------------+
@@ -143,7 +148,8 @@ mysql> select  id,Student_Name, Student_Salary from employee where Student_Salar
 +----+--------------+----------------+
 5 rows in set (0.01 sec)
 
-mysql> select  id,Student_Name, Student_Salary from employee where Student_Salary < All (select avg(Student_Salary) from employee) group by Student_Name;
+mysql> select  id,Student_Name, Student_Salary from employee where 
+Student_Salary < All (select avg(Student_Salary) from employee) group by Student_Name;
 +----+--------------+----------------+
 | id | Student_Name | Student_Salary |
 +----+--------------+----------------+

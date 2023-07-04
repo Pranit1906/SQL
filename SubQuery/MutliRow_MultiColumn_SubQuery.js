@@ -7,7 +7,8 @@ SELECT field1, field2,�.FROM table
 WHERE (field1, field2,..) IN 
 (SELECT field, field,�FROM table WHERE condition); 
 
-mysql> select id, Student_Salary,Student_Age from employee where (Student_Salary,Student_Age) in (select Student_Salary,Student_Age from employee where id between 1 and 5);
+mysql> select id, Student_Salary,Student_Age from employee where (Student_Salary,Student_Age) in
+ (select Student_Salary,Student_Age from employee where id between 1 and 5);
 +----+----------------+-------------+
 | id | Student_Salary | Student_Age |
 +----+----------------+-------------+
@@ -47,7 +48,8 @@ WHERE (jobTitle, officeCode) IN
 (SELECT jobTitle, officeCode FROM employees
 WHERE firstName = 'Pamela') AND firstName <> 'Pamela';
 
-mysql> select * from employee where (Student_Salary, Student_Age) in (select Student_Salary, Student_Age from employee where Student_salary < 40000);
+mysql> select * from employee where (Student_Salary, Student_Age) in
+ (select Student_Salary, Student_Age from employee where Student_salary < 40000);
 +----+--------------+----------------+-------------+------------+
 | id | Student_Name | Student_Salary | Student_Age | Date       |
 +----+--------------+----------------+-------------+------------+
