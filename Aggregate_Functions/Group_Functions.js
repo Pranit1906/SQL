@@ -76,7 +76,8 @@ mysql> select sum(salary) from employees;
 
 /*
 GROUP BY Clause With HAVING
-Group by clause: GROUP BY clause is used to group selected rows and return a single row of summary information based on that group. The group by clause can have following types of expressions: 
+Group by clause: GROUP BY clause is used to group selected rows and return a single row of summary information based on that group.
+The group by clause can have following types of expressions: 
 
 Constants 
 

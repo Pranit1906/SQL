@@ -68,7 +68,8 @@ mysql> select isNull(1/0);
 
 
 
-GREATEST(value1,value2,...) / LEAST(value1, value2,...): With two or more arguments, returns the largest (maximum-valued) argument. The arguments are compared using the same rules as for LEAST().
+GREATEST(value1,value2,...) / LEAST(value1, value2,...): With two or more arguments, 
+returns the largest (maximum-valued) argument. The arguments are compared using the same rules as for LEAST().
 
 mysql> select greatest(1,23,4,-1,10);
 +------------------------+

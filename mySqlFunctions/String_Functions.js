@@ -74,7 +74,7 @@ m can be positive or negative. If m is positive, extracting of characters
 starts from left hand side. If m is negative, extracting of characters starts 
 from right hand side. If m is a floating point, it is converted to integer.
 
-mysql> select substr("Extracting Characters",2,5);
+mysql> select substr("Extracting Characters",2,5);// here 2 is start index , 5 is no of characters.
 +-------------------------------------+
 | substr("Extracting Characters",2,5) |
 +-------------------------------------+

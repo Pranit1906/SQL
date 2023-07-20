@@ -11,6 +11,13 @@ SELECT col1, col2, ...
 FROM table_name
 ORDER BY col1, col2, ... ASC|DESC;
 
+Select all records from the Customers table, sort the result alphabetically, first by the column Country, then, by the column City.
+
+
+SELECT * FROM Customers
+Order by Country,City
+;
+
 mysql> select * from employee;
 +----+--------+------------+--------+----------+
 | Id | Name   | Department | Salary | Location |
