@@ -11,10 +11,21 @@ a. Commit:- Commit command is used to save all the transactions to the database.
 Syntax:-
 COMMIT; 
 
-Example:-
+Example 1:-
 DELETE FROM CUSTOMERS WHERE AGE = 25;  
 COMMIT; 
 
+Example 2:-
+// -- Start a transaction --
+BEGIN;
+
+// -- Update data --
+UPDATE employees SET salary = salary * 1.1 WHERE department = 'IT';
+
+// -- Commit the transaction --
+COMMIT;
+In this example, the BEGIN statement marks the start of a transaction,
+the UPDATE statement modifies data, and the COMMIT statement makes the changes permanent.
 
 mysql> insert into employee values( 11, 'Gandhi', 44000, 89, '1945-05-21');commit;
 Query OK, 1 row affected (0.00 sec)

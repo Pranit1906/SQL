@@ -162,4 +162,59 @@ Student_Salary < All (select avg(Student_Salary) from employee) group by Student
 +----+--------------+----------------+
 6 rows in set (0.01 sec)
 
+
+
+4. Exists :-
+  1. The EXISTS operator in a subquery is used to check whether the subquery returns any rows. 
+  2. It returns TRUE if the subquery returns one or more rows, and FALSE if the subquery returns no rows. 
+  3. The EXISTS operator is often used in the context of a WHERE clause to filter rows based on 
+   the existence of related rows in another table.
+  4. Syntax:-
+   SELECT column1, column2, ...
+   FROM table1
+   WHERE EXISTS (SELECT 1 FROM table2 WHERE condition);
+  
+
+ Example:
+Suppose you have a departments table and an employees table:
+
+CREATE TABLE departments (
+    department_id INT,
+    department_name VARCHAR(255)
+);
+
+INSERT INTO departments VALUES (1, 'HR');
+INSERT INTO departments VALUES (2, 'IT');
+INSERT INTO departments VALUES (3, 'Finance');
+
+CREATE TABLE employees (
+    employee_id INT,
+    employee_name VARCHAR(255),
+    department_id INT
+);
+
+INSERT INTO employees VALUES (1, 'Alice', 1);
+INSERT INTO employees VALUES (2, 'Bob', 2);
+INSERT INTO employees VALUES (3, 'Charlie', 1);
+
+
+Now, if you want to find departments that have at least one employee, you can use the EXISTS operator:
+
+SELECT department_id, department_name
+FROM departments d
+WHERE EXISTS (SELECT 1 FROM employees e WHERE e.department_id = d.department_id);
+
+
+
+In this example, the subquery checks whether there is at least one row in the employees table
+ with a matching department_id. The result would look like:
++-------------+------------------+
+| department_id | department_name |
++-------------+------------------+
+| 1           | HR               |
+| 2           | IT               |
+| 3           | Finance          |
++-------------+------------------+
+The result set includes only those departments for which at least one employee exists in the employees table.
+ The EXISTS operator is a powerful tool when you need to filter rows based on the existence of related rows in another table.
 */

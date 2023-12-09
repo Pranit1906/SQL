@@ -142,7 +142,11 @@ TRUNCATE TABLE table_name;
 
 
 
-ALTER: ALTER TABLE command is used to change the name of the table or rename one or more columns of the table, add new columns, remove existing ones, modify the datatype, length, index of one or more column and we can also rename the name of the table
+ALTER: 
+ALTER TABLE command is used to change the name of the table or 
+rename one or more columns of the table, add new columns, remove existing ones, 
+modify the datatype, length, index of one or more column 
+and we can also rename the name of the table
 
 1. ALTER TABLE statement with ADD command :
 ALTER TABLE name_of_table ADD name_of_new_column details_of_column [ FIRST | AFTER name_of_existing_column ];

@@ -14,11 +14,14 @@ Types of Joins:
 1. Equal Join:- 
 An equijoin is a join which contains an equality operator.
 
-SELECT tab1.fieldname, tab1.fieldname, tab2.fieldname, tab2.fieldname, FROM tab1, tab2 WHERE tab1.fieldname = tab2.fieldname; 
+SELECT tab1.fieldname, tab1.fieldname, tab2.fieldname, tab2.fieldname, FROM tab1, tab2 WHERE 
+tab1.fieldname = tab2.fieldname; 
 Alias can be used in place of table name.
 
 Example:-
-SELECT employeeNumber, CONCAT(firstName, ' ', lastName) AS "Full Name", o.officeCode, city FROM employees e, offices o WHERE e.officeCode = o.officeCode;
+SELECT employeeNumber, CONCAT(firstName, ' ', lastName) AS "Full Name", o.officeCode, city 
+FROM employees e, offices o WHERE e.officeCode = o.officeCode;
+
 
 
 
@@ -27,7 +30,8 @@ It is a join which relates the table to itself.
 
 Example:-
 Display the names of all employees who has manager.
-SELECT Concat(e1.firstName, ' ', e1.lastName, ' works for ', e2.firstName, ' ', e2.lastName) AS "Employee works for Manager" 
+SELECT Concat(e1.firstName, ' ', e1.lastName, ' works for ', e2.firstName, ' ', e2.lastName) 
+AS "Employee works for Manager" 
 FROM employees e1, employees e2 WHERE e1.reportsTo = e2.employeeNumber;
 
 
@@ -39,7 +43,6 @@ Display customer details along with order details between 12-Jan-2003 to 31-Mar-
 SELECT c.customerName, o.orderNumber, o.orderDate, od.quantityOrdered * od.priceEach as "Total Cost"
 FROM customers c, orders o, orderdetails od WHERE c.customerNumber = o.customerNumber and 
 o.orderNumber = od.orderNumber and  o.orderDate between '2003-01-12' and '2003-03-31';
-
 
 i.) On Clause:-
 The ON clause is used to join tables where the column names don�t match in both tables. 
@@ -88,4 +91,5 @@ SELECT e.firstName, c.customerName FROM employees e RIGHT OUTER JOIN customers c
 2.3 Full Outer Join
 3.Cross Join
 4. Self Join
+
 */
