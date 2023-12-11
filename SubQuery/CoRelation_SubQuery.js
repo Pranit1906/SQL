@@ -86,3 +86,36 @@ For every car evaluated by the outer or main query, the lowest price in its cate
 In case the price of any car is equal to the least price of all cars in the same category, it is added to the result. 
 Thus, the correlated subquery is executed for every row evaluated by the outer query.
 */
+
+/*
+
+-- Correlated Query (Synchronized Query) --
+-- uses outer query value to slve Inner Query --
+-- Top to Bottom Approach --
+-- Outer Query Value will get compare with all values of Inner Query Till all outer Values gets over --
+
+create table emp (e_id int primary key, name varchar(100), Location varchar(70));
+create table dept(d_id int primary key, d_name varchar(100), e_id int, foreign key(e_id) references emp(e_id));
+desc emp;
+desc dept;
+insert into emp values(1, "A", "Delhi"),(2, "B", "Mumbai"),(3, "C", "Gujurat"),(4, "D", "Rajasthan"),(5,"E","Punjab"),(6,"F","Gurgaon");
+select* from emp;
+insert into dept values(101,"IT",1),(102,"EC",3),(103,"CIVIL",4),(104,"Marketing",2);
+select* from dept;
+
+-- Find ALL Employess working and alotted a Department --
+select * from emp where exists(select * from dept where emp.e_id = dept.e_id);
+-- here for each e_id value Inner query compares each d_id till it finds a Match --
+-- Exists operator returns True as Output so to confirm presence of e_id --
+
+select * from employees;
+
+-- find highest salary from emp table with all details --
+select * from employees e1 where 1 = (select count(distinct(e2.Salary)) from employees e2 where e1.Salary<=e2.Salary);
+-- for highest salary we use <= --
+
+-- find highest salary from emp table with all details --
+select * from employees e1 where 1 = (select count(distinct(e2.Salary)) from employees e2 where e1.Salary>=e2.Salary);
+-- for Lowest salary we use >= --
+
+*/
