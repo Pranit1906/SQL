@@ -99,6 +99,20 @@ C) Thing in real world  <--- Ans
 D) Model of relation
 
 16) Which statement is a contrapositive statement of the conditional statement:
+Let's consider an example:
+
+Original Statement:
+If it is raining (P), 
+then the ground is wet (Q).
+
+Converse Statement:
+If the ground is wet (Q), 
+then it is raining (P).
+
+Contrapositive Statement:
+If the ground is not wet (¬Q), 
+then it is not raining (¬P).
+
 If a=b,then b=a.
 A) if b=b,then a=a.
 B) if b does not =a,then a does not=b.  <--- Ans

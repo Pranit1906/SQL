@@ -13,3 +13,8 @@ desc fullstack;
 
 -- alter database Name --
 -- https://www.youtube.com/watch?v=krXBR0_u5s0&t=120s --
+
+-- Create tables with Similar Schema using Like Operator ---
+desc client;
+create table custom like client;
+desc custom;
